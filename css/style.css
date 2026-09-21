@@ -34,20 +34,22 @@ main p {
     line-height: 1.5;
 }
 
-a :link {
+a:link {
     color: var(--cor-texto);
 }
 
-a :visited {
+a:visited {
     color: var(--cor-principal);
 }
 
-a :hover {
+/* Usamos transform no hover para evitar alterar width/height e causar mudanças no layout */
+a:hover {
     color: var(--cor-secundaria);
     text-decoration: none;
+    transform: scale(1.05);
 }
 
-a :active {
+a:active {
     background-color:
 var(--cor-principal);
     color: var(--cor-secundaria);
@@ -83,4 +85,29 @@ h2 {
 
 p {
     font-size: 1rem;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+main section:nth-child(2){
+    border: 2px solid
+var(--cor-principal);
+}
+
+main section {
+    padding: 20px;
+    border: 1px solid
+    var(--cor-principal);
+    border-radius: var(--raio-borda);
+    min-width: 0;
+}
+
+main img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
